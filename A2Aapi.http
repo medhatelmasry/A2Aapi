@@ -1,0 +1,23 @@
+@A2Aapi_HostAddress = http://localhost:5112
+
+###
+# Send A2A request to the pirate agent
+POST {{A2Aapi_HostAddress}}/a2a/pirate/v1/message:stream
+Accept: application/json
+Content-Type: application/json
+
+{
+  "message": {
+    "kind": "message",
+    "role": "user",
+    "parts": [
+      {
+        "kind": "text",
+        "text": "Hey pirate! Tell me where have you been",
+        "metadata": {}
+      }
+    ],
+    "messageId": null,
+    "contextId": "foo"
+  }
+}
